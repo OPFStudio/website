@@ -1,0 +1,220 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+   *
+   * Color Palette:
+   * #020817 - Very dark navy (background base)
+   * #0D1B2A - Deep navy (cards/sections)
+   * #1E3A8A - Blue (elements)
+   * #3B82F6 - Electric blue (primary accent)
+   * #22C55E - Energy green (secondary accent)
+   * #64748B - Slate gray (text/borders)
+  */
+  :root {
+    --background: 217 67% 5%;
+    --foreground: 210 40% 96%;
+
+    --card: 216 52% 12%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 216 52% 12%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 217 96% 58%;
+    --primary-foreground: 217 67% 5%;
+
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 217 32% 24%;
+    --muted-foreground: 210 16% 60%;
+
+    --accent: 217 96% 58%;
+    --accent-foreground: 217 67% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 96%;
+
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 217 96% 58%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 217 67% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 96% 58%;
+    --sidebar-primary-foreground: 217 67% 5%;
+    --sidebar-accent: 217 32% 20%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 32% 18%;
+    --sidebar-ring: 217 96% 58%;
+  }
+
+  .dark {
+    --background: 217 67% 5%;
+    --foreground: 210 40% 96%;
+    --card: 216 52% 12%;
+    --card-foreground: 210 40% 96%;
+    --popover: 216 52% 12%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 217 96% 58%;
+    --primary-foreground: 217 67% 5%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 32% 24%;
+    --muted-foreground: 210 16% 60%;
+    --accent: 217 96% 58%;
+    --accent-foreground: 217 67% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 217 32% 18%;
+    --input: 217 32% 18%;
+    --ring: 217 96% 58%;
+    --sidebar-background: 217 67% 5%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 96% 58%;
+    --sidebar-primary-foreground: 217 67% 5%;
+    --sidebar-accent: 217 32% 20%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 32% 18%;
+    --sidebar-ring: 217 96% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .svg-color{
+    fill: white;
+  }
+  .hero-paddings{
+    padding-top: 0px;
+    padding-bottom: 5px;
+  }
+  .hero-back{
+    background-color: #050609;
+  }
+  .hero-home{
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    background-image: url('/hero-home2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .navbar{background-color: rgb(14, 0, 91)}
+  .gradient-mesh {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, #020817 0%, #0D1B2A 50%, #020817 100%);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-green-500 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 border border-blue-400/20;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border border-blue-500/40 text-blue-300 font-semibold hover:bg-blue-500/15 hover:border-blue-400/60 transition-all duration-300;
+  }
+
+  .card-glass {
+    @apply relative rounded-xl border border-blue-500/20 bg-gradient-to-br from-slate-900/40 to-slate-800/20 backdrop-blur-xl p-6;
+  }
+
+  .metric-card {
+    @apply rounded-lg bg-gradient-to-br from-slate-800/50 to-slate-900/30 border border-blue-500/20 p-4 hover:border-blue-500/50 hover:from-slate-800/70 hover:to-slate-900/40 transition-all duration-300;
+    background-color: red !important
+  }
+
+  .energy-glow {
+    @apply shadow-lg shadow-blue-500/20;
+  }
+
+  .energy-border {
+    @apply border-blue-500/30;
+  }
+
+  .dashboard-card {
+    @apply rounded-xl border border-blue-500/25 bg-gradient-to-br from-blue-950/40 to-slate-900/30 backdrop-blur-md p-6 hover:border-blue-500/50 hover:from-blue-950/60 hover:to-slate-900/40 transition-all duration-300;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 25px rgba(59, 130, 246, 0.3), 0 0 50px rgba(59, 130, 246, 0.1); }
+  50% { opacity: 0.85; box-shadow: 0 0 40px rgba(59, 130, 246, 0.5), 0 0 60px rgba(59, 130, 246, 0.2); }
+}
+
+@keyframes energy-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes grid-glow {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.1; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-energy-pulse {
+  animation: energy-pulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+
+.animate-grid-glow {
+  animation: grid-glow 4s ease-in-out infinite;
+}
