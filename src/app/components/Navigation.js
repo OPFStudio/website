@@ -45,10 +45,12 @@ export default function Navigation() {
           <div className="flex items-center gap-4">
             <button className="hidden sm:p-2 text-gray-400 hover:text-blue-400 transition-colors">
               <Search size={20} />
-            </button>
-            <button className="hidden sm:inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all border border-blue-400/20">
-              Login
-            </button>
+            </button> 
+            <a href="https://app.opfstudio.com/" className="cursor-pointer">
+              <button className="cursor-pointer hidden sm:inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all border border-blue-400/20">
+                Login
+              </button>
+            </a>
             <button className="hidden sm:inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all border border-blue-400/20">
               Suscribirse
             </button>
